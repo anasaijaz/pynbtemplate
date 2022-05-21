@@ -1,6 +1,5 @@
 <template>
   <div :class="rootClass" :style="style">
-  <div >
     <div :key="index" v-for="(cell, index) in cells">
       <div class="block">
       <div v-if="isCellValid">
@@ -12,9 +11,6 @@
       </div>
       <br/>
     </div>
-  </div>
-    <div class="footer"> Anas</div>
-
   </div>
 </template>
 
