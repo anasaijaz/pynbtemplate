@@ -23,3 +23,8 @@ Now you are good to go
 | gist | boolean    |    Provide a github gist like look |
 | code_font_size | px rem em ...     |    font size of the code |
 | json | object     |    JSON schema of the code  |
+
+
+
+### Contributions required 🎉
+https://github.com/anasaijaz/pynbtemplate

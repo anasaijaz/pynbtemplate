@@ -4,7 +4,7 @@
     <p v-else style="margin-right: 3.5rem"></p>
 
     <div v-if="cell['cell_type']==='code'" class="block">
-    <pre class="language-js"><code  :style="code_style">{{src.join('')}}}</code>
+    <pre class="language-js"><code  :style="code_style">{{src.join('')}}</code>
 </pre>
 
     </div>
@@ -56,6 +56,7 @@ export default {
   font-family: Consolas, monospace;
   margin: unset;
   font-size: small;
+  white-space: nowrap;
 }
 
 .container {

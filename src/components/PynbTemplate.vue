@@ -90,8 +90,5 @@ export default {
   border-radius: 8px;
 }
 
-.footer {
-  background-color: red;
-  width: 100%;
-}
+
 </style>

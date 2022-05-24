@@ -9,7 +9,8 @@
       </div>
 
       <div v-if="type(output) === 'execute_result'">
-        <pre>{{ !output['data']['text/plain'] ? '' : output['data']['text/plain'].join('') }}</pre>
+        <div v-if="'text/html' in output['data']" v-html="output['data']['text/html'].join('')"></div>
+        <pre v-else>{{ !output['data']['text/plain'] ? '' : output['data']['text/plain'].join('') }}</pre>
       </div>
 
       <div v-if="type(output) === 'display_data' && output['data'] !== undefined">
@@ -48,7 +49,7 @@ export default {
       }
     },
     haveHTML(data){
-      if('text/plain' in data) {
+      if('text/html' in data) {
         return 'HTML'
       }
     },
@@ -84,15 +85,52 @@ export default {
   font-family: Consolas, monospace;
   margin: unset;
   font-size: small;
+  white-space: nowrap;
 }
 
 .container {
   display: flex;
   gap: 1.1rem;
+  padding-top: 1.5rem;
 }
 
 .block {
   flex-grow: 1;
   overflow: auto;
 }
+
+::v-deep table {
+  margin-bottom: 2em;
+  width: 100%;
+  border: none;
+}
+::v-deep th {
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-block: 0.25rem;
+  color: black;
+  font-size: 0.8rem;
+}
+::v-deep td {
+  border: unset;
+  text-align: right;
+}
+::v-deep tr:nth-child(2n) {
+  background-color: #f5f5f5;
+}
+::v-deep caption, th, td {
+  padding: 4px 10px 4px 0;
+}
+::v-deep caption {
+  background: #f1f1f1;
+  padding: 10px 0;
+  margin-bottom: 1em;
+}
+
+::v-deep tr,td,th {
+  vertical-align: middle;
+}
+
 </style>
