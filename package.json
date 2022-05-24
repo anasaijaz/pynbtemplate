@@ -1,8 +1,9 @@
 {
   "name": "pynbtemplate",
   "description": "A client side python notebook renderer",
-  "version": "1.1.8",
+  "version": "1.1.10",
   "private": false,
+  "repository": "https://github.com/anasaijaz/pynbtemplate",
   "author": {
     "name": "Anas",
     "email": "anasaijaz.201cv107@nitk.edu.in"

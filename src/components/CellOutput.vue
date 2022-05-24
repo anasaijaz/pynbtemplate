@@ -5,7 +5,7 @@
     <div class="block">
     <div class="output" :key="index" v-for="(output, index) in outputs">
       <div v-if="type(output) === 'stream'">
-        <pre>{{ !output['text'] ? '' : output['text'].join('') }}</pre>
+        <pre :class="output['name']==='stderr'?'stderr_block':'stdout_block'">{{ !output['text'] ? '' : output['text'].join('') }}</pre>
       </div>
 
       <div v-if="type(output) === 'execute_result'">
@@ -69,9 +69,6 @@ export default {
           data: data['text/plain'].join('')
         }
       }
-    },
-    output() {
-
     }
   },
   computed: {
@@ -98,6 +95,12 @@ export default {
   flex-grow: 1;
   overflow: auto;
 }
+
+.stderr_block {
+  background-color: RGB(255, 221, 220);
+  width: max-content;
+}
+
 
 ::v-deep table {
   margin-bottom: 2em;

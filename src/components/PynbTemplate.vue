@@ -31,15 +31,15 @@ export default {
     },
     height: {
       type: String,
-      default: '400px'
+      default: 'max-content'
     },
     width: {
       type: String,
-      default: '400px'
+      default: 'max-content'
     },
     code_font_size: {
       type: String,
-      default: '14px'
+      default: '1.75rem'
     }
   },
   methods: {
@@ -74,6 +74,7 @@ export default {
 
 .root {
   position: relative;
+  overflow: auto;
 }
 
 .block {
@@ -84,11 +85,14 @@ export default {
   padding: 1rem;
   width: 600px;
   height: 600px;
-  overflow: auto;
   margin: auto;
   border: 1px solid lightgray;
   border-radius: 8px;
 }
 
+
+::v-deep h2, ::v-deep h3,::v-deep h4,::v-deep h5,::v-deep h6,::v-deep p {
+  margin: unset;
+}
 
 </style>

@@ -16,13 +16,13 @@ Import css
 Now you are good to go
 
 
-| Prop        | Type           | Description  |
-| ------------- |:-------------:| -----------:|
-| width      | px rem em... | Width of the container |
-| height      | px rem em...      |   Height of the container |
-| gist | boolean    |    Provide a github gist like look |
-| code_font_size | px rem em ...     |    font size of the code |
-| json | object     |    JSON schema of the code  |
+| Prop        | Type           | Default |Description  |
+| ------------- |:-------------:| -----------:| -----------:|
+| width      | px rem em... | max-content  |Width of the container |
+| height      | px rem em...      | max-content |  Height of the container |
+| gist | boolean    | false  | Provide a github gist like look |
+| code_font_size | px rem em ...     |  1.75rem |  font size of the code |
+| json | object     | - | JSON schema of the code  |
 
 
 
